@@ -511,3 +511,13 @@ body.dark-mode footer {
     padding-left: 1rem;
   }
 }
+
+/* Dark mode header fix */
+body.dark-mode header {
+    background-color: #1a1a1a !important;
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode h1 {
+    color: #ffffff !important;
+}
