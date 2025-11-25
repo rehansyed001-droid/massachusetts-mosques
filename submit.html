@@ -1,61 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Submit a Mosque</title>
-   <link rel="stylesheet" href="styles.css">
-</head>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Submit a Mosque</title>
+      <link rel="stylesheet" href="styles.css" />
+   </head>
 
-<body>
-<div class="container">
+   <body>
+      <div class="container">
+         <p class="skipnavigation"><a href="#contentstart">Skip navigation</a></p>
 
-   <header>
-      <h1><a href="index.html">Massachusetts Mosques Directory</a></h1>
-   </header>
+         <header>
+            <h1><a href="index.html">Massachusetts Mosques Directory</a></h1>
+         </header>
 
-   <nav class="sitenavigation">
-      <ul>
-         <li><a href="index.html">Home</a></li>
-         <li><a href="masajid.html">Masajid</a></li>
-         <li><a href="education.html">Education</a></li>
-         <li><a href="submit.html" class="current">Submit</a></li>
-         <li><a href="about.html">About</a></li>
-      </ul>
-   </nav>
+         <nav class="sitenavigation">
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="masajid.html">Masajid</a></li>
+               <li><a href="education.html">Education</a></li>
+               <li><a href="submit.html" class="current">Submit</a></li>
+               <li><a href="about.html">About</a></li>
+               <li>
+                  <button id="darkToggle" class="dark-toggle" type="button">🌙 Dark Mode</button>
+               </li>
+            </ul>
+         </nav>
 
-   <article id="contentstart">
-      <h2>Submit a Mosque or Correction</h2>
-      <p>Use this form to request an addition or correction to the directory.</p>
+         <main>
+            <article id="contentstart">
+               <h2>Submit a Mosque or Correction</h2>
+               <p>Use this form to request an addition or correction to the mosque directory.</p>
 
-      <form action="https://formsubmit.co/rehan.syed001@umb.edu" method="POST">
-         <label>Your Name:</label>
-         <input type="text" name="name" required>
+               <form
+                  action="https://formsubmit.co/rehan.syed001@umb.edu"
+                  method="POST"
+                  class="submit-form"
+               >
+                  <label for="name">Your Name:</label>
+                  <input id="name" type="text" name="name" required />
 
-         <label>Your Email:</label>
-         <input type="email" name="email" required>
+                  <label for="email">Your Email:</label>
+                  <input id="email" type="email" name="email" required />
 
-         <label>Mosque Name:</label>
-         <input type="text" name="mosque_name" required>
+                  <label for="mosque_name">Mosque Name:</label>
+                  <input id="mosque_name" type="text" name="mosque_name" required />
 
-         <label>City:</label>
-         <input type="text" name="city" required>
+                  <label for="mosque_address">Mosque Address:</label>
+                  <input id="mosque_address" type="text" name="mosque_address" required />
 
-         <label>Message / Details:</label>
-         <textarea name="message" rows="5" required></textarea>
+                  <label for="mosque_region">Mosque Region:</label>
+                  <select id="mosque_region" name="mosque_region" required>
+                     <option value="">Select a Region</option>
+                     <option value="Western">Western</option>
+                     <option value="Central">Central</option>
+                     <option value="Eastern">Eastern</option>
+                  </select>
 
-         <!-- FormSubmit options -->
-         <input type="hidden" name="_captcha" value="false">
-         <input type="hidden" name="_template" value="table">
+                  <label for="details">Message / Details:</label>
+                  <textarea id="details" name="details" rows="6" required></textarea>
 
-         <button type="submit">Submit</button>
-      </form>
-   </article>
+                  <!-- FormSubmit settings -->
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="box" />
 
-   <footer>
-      <p>&copy; 2025 Massachusetts Mosques Directory</p>
-   </footer>
+                  <button type="submit">Submit</button>
+               </form>
+            </article>
+         </main>
 
-</div>
-</body>
+         <footer>
+            <p>&copy; 2025 Massachusetts Mosques Directory</p>
+         </footer>
+      </div>
+
+      <script>
+         (function () {
+            const toggle = document.getElementById('darkToggle');
+
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+               document.body.classList.add('dark-mode');
+               if (toggle) toggle.textContent = '☀️ Light Mode';
+            }
+
+            if (toggle) {
+               toggle.addEventListener('click', function () {
+                  document.body.classList.toggle('dark-mode');
+                  const isDark = document.body.classList.contains('dark-mode');
+                  toggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+                  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+               });
+            }
+         })();
+      </script>
+   </body>
 </html>
