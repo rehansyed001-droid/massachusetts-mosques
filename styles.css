@@ -502,3 +502,65 @@ body.dark-mode {
 .dark-mode header h1 a {
     color: #ffffff !important;
 }
+
+/* ===== Submit Form Styles ===== */
+.submit-form {
+   background: #f9f9f9;
+   border: 1px solid #ccc;
+   padding: 1.5rem;
+   border-radius: 8px;
+   margin-top: 1rem;
+   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.submit-form label {
+   font-weight: bold;
+   margin-bottom: 0.2rem;
+}
+
+.submit-form input,
+.submit-form select,
+.submit-form textarea {
+   font-size: 1rem;
+   padding: 0.5rem;
+   border: 1px solid #aaa;
+   border-radius: 6px;
+}
+
+.submit-btn {
+   background-color: #004080;
+   color: white;
+   border: none;
+   padding: 0.7rem;
+   font-size: 1rem;
+   font-weight: bold;
+   border-radius: 6px;
+   cursor: pointer;
+}
+
+.submit-btn:hover {
+   background-color: #003060;
+}
+
+/* Dark Mode for form */
+.dark-mode .submit-form {
+   background-color: #2a2a2a;
+   border-color: #444;
+}
+
+.dark-mode .submit-form label,
+.dark-mode .submit-form input,
+.dark-mode .submit-form select,
+.dark-mode .submit-form textarea {
+   color: #ffffff;
+   background: #444;
+   border-color: #555;
+}
+
+.dark-mode .submit-btn {
+   background-color: #0a84ff;
+}
+

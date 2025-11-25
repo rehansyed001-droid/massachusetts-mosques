@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Submit a Masjid</title>
+
+   <script src="modernizr-latest.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+   <link rel="stylesheet" href="styles.css">
+
+   <link rel="shortcut icon" href="images/favicon.ico">
+   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+   <link rel="icon" sizes="192x192" href="images/android.png">
+</head>
+
+<body>
+   <div class="container">
+      <p class="skipnavigation"><a href="#contentstart">Skip navigation</a></p>
+
+      <header>
+         <h1><a href="index.html">Massachusetts Mosques Directory</a></h1>
+      </header>
+
+      <nav class="sitenavigation">
+         <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="masajid.html">Masajid</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="submit.html" class="current">Submit</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+               <button id="darkToggle" class="dark-toggle" type="button">🌙 Dark Mode</button>
+            </li>
+         </ul>
+      </nav>
+
+      <article id="contentstart">
+         <h2>Submit a Masjid</h2>
+         <p>
+            Submit a masjid to be added to the Massachusetts directory. All submissions are reviewed before appearing on the site.
+         </p>
+
+         <!-- FORM WITH EMAIL SUBMISSION -->
+         <form action="https://formsubmit.co/rehan.syed001@umb.edu" method="POST" class="submit-form">
+
+            <!-- Prevent spam bots -->
+            <input type="hidden" name="_captcha" value="false">
+
+            <!-- Redirect after submit -->
+            <input type="hidden" name="_next" value="https://rehansyed001-droid.github.io/massachusetts-mosques/submit.html?success=true">
+
+            <label for="masjidName">Masjid Name:</label>
+            <input type="text" id="masjidName" name="Masjid Name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="Address" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="City" required>
+
+            <label for="region">Region:</label>
+            <select id="region" name="Region" required>
+               <option value="">Select a region</option>
+               <option value="Western">Western</option>
+               <option value="Central">Central</option>
+               <option value="Eastern">Eastern</option>
+            </select>
+
+            <label for="website">Website (optional):</label>
+            <input type="url" id="website" name="Website">
+
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" name="Notes" rows="4"></textarea>
+
+            <button type="submit" class="submit-btn">Submit Masjid</button>
+         </form>
+
+         <!-- SUCCESS MESSAGE -->
+         <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+               document.write("<p style='color: green; font-weight: bold; margin-top: 1rem;'>Thank you! Your submission has been received.</p>");
+            }
+         </script>
+
+      </article>
+
+      <footer>
+         <p>&copy; 2025 Massachusetts Mosques Directory</p>
+      </footer>
+   </div>
+
+   <!-- Dark Mode Script -->
+   <script>
+      (function () {
+         const toggle = document.getElementById('darkToggle');
+
+         const savedTheme = localStorage.getItem('theme');
+         if (savedTheme === 'dark') {
+             document.body.classList.add('dark-mode');
+             toggle.textContent = '☀️ Light Mode';
+         }
+
+         toggle.addEventListener('click', function () {
+             document.body.classList.toggle('dark-mode');
+             const isDark = document.body.classList.contains('dark-mode');
+             toggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+             localStorage.setItem('theme', isDark ? 'dark' : 'light');
+         });
+      })();
+   </script>
+
+</body>
+</html>
