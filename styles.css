@@ -1,0 +1,504 @@
+/* 
+   Spotted Wren Garden Center style sheet 
+   Filename: styles.css
+
+   Author: Rehan Syed  
+   Date: 11/24/25   
+   Final Projet 
+   --- IGNORE ---    
+ */
+
+/* reset styles */
+html {
+   font-size: 18px;
+}
+a, article, body, div, fieldset, figcaption, figure, footer, form, header, h1, 
+h2, h3, img, input, label, legend, li, nav, p, section, textarea, ul {
+   border: 0;
+   padding: 0;
+   margin: 0;
+}
+img {
+   max-width: 100%;
+   height: auto;
+   width: auto;
+}
+
+/* global styles */
+p {
+   margin-top: 0.4em;
+   font-size: 1.1em;
+}
+
+/* body and page container */
+body {
+   font-family: Lato, Arial, Helvetica, sans-serif;
+   background: #6ac238;
+}
+.container {
+   max-width: 864px;
+   margin: 0 auto;
+   position: relative;
+}
+
+/* skip navigation link */
+p.skipnavigation {
+   margin: 0;
+}
+p.skipnavigation a {
+   position: absolute;
+   left: -10000px;
+}
+p.skipnavigation a:focus {
+   color: black;
+   background-color: snow;
+   top: 3.5%;
+   left: auto;
+   right: 3%;
+   z-index: 2;
+}
+
+/* header section */
+header {
+   background-color: white;
+   text-align: center;
+}
+h1 {
+   font-weight: 700;
+   font-size: 2em;
+}
+h1 img {
+   display: block;
+}
+
+/* site navigation */
+nav.sitenavigation {
+   padding-left: 10%;
+   background-color: rgb(241,90,36);
+}
+nav.sitenavigation li {
+   display: inline-block;
+   margin: 0.4em 0.6em;
+   font-size: 1.1em;
+}
+nav.sitenavigation a:link {
+   color: yellow;
+   text-decoration: none;
+}
+nav.sitenavigation a:visited {
+   color: #ffffff;
+}
+nav.sitenavigation a:hover, nav.sitenavigation a:focus {
+   color: yellow;
+   text-shadow: 1px -1px 0 #000000;
+}
+
+/* main content */
+article {
+   padding: 1% 5%;
+   text-align: left;
+   background-color: rgb(255,255,255);
+   overflow: auto;
+}
+h2 {
+   margin: 0 0 0.4em;
+   font-size: 1.8em;
+   font-weight: 700;
+}
+h3 {
+   margin: 1em 0 0.5em;
+   font-size: 1.2em;
+   font-weight: bold;
+   color: green;
+}
+h4 {
+   font-size: 1.1em;
+   font-weight: 500;
+}
+figure {
+   max-width: 60%;
+   margin-bottom: 1em;
+   float: right;
+   clear: both;
+   text-align: center;
+}
+.scientific-name {
+   font-style: italic;
+}
+p.scientific-name {
+   margin: 0 0 0 1em;
+}
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+td, th {
+   padding: 0 0.4em 0.8em;
+   font-size: 1.3em;
+}
+td:first-child {
+   font-weight: bold;
+}
+
+/* form styles */
+form {
+   margin: 2%;
+   padding: 2%;
+   border: 2px solid black;
+   background-color: #ff9c78;
+}
+.form-instructions {
+   color: green;
+}
+
+/* fieldset styles */
+fieldset {
+   margin: 0 0 1em 1em;
+}
+.submitbutton {
+   margin-bottom: 0;
+   text-align: center;
+}
+
+/* field styles */
+input, textarea {
+   border: 1px solid #777;
+   padding: 0.2em;
+   font-size: 1em;
+}
+.contactinfo input:valid {
+   background-color: #d1f4bd;
+}
+input:focus, textarea:focus {
+   background-color: yellow;
+}
+.contactinfo input {
+   position: absolute;
+   left: 4em;
+}
+#nameinput, #emailinput {
+   max-width: 25em;
+   width: 75%;
+}
+#phoneinput {
+   width: 50%;
+   max-width: 12em;
+}
+#notes {
+   width: 96%;
+   margin-top: 0.5em;
+   display: block;
+}
+
+/* label styles */
+label {
+   font-size: 1em;
+}
+.contactinfo label {
+   margin: 0.7em 0;
+   display: block;
+   position: relative;
+}
+.contactinfo label:before {
+   content: "* ";
+   color: green;
+}
+
+/* footer section */
+footer {
+   width: 94%;
+   padding: 1% 1% 1% 5%;
+   background-color: yellow;
+   clear: both;
+   font-size: 1.1em;
+   display: inline-block;
+}
+
+/* print styles */
+@media print {
+   .container, h1, h2, p {
+      color: black;
+      background: white;
+   }
+   nav {
+      display: none;
+   }
+}
+@page {
+   margin: 1in;
+}
+
+/* ==== App cards on Education page ==== */
+
+.app-section {
+   margin-top: 1.5rem;
+}
+
+.app-grid {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+   justify-content: center;
+}
+
+.app-card {
+   flex: 1 1 220px;
+   max-width: 260px;
+   background-color: #f9f9f9;
+   border: 1px solid #ccc;
+   border-radius: 8px;
+   padding: 1rem;
+   text-align: center;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.app-card img {
+   width: 80px;
+   height: 80px;
+   object-fit: contain;
+   margin-bottom: 0.5rem;
+}
+
+.app-card h4 {
+   margin: 0.5rem 0;
+   font-size: 1.05rem;
+}
+
+.app-card ul {
+   list-style-type: disc;
+   text-align: left;
+   padding-left: 1.2rem;
+   font-size: 0.9rem;
+   margin: 0.5rem 0 0.25rem 0;
+}
+/* Bigger icons for Qada Mate and Athan Plus */
+.big-icon {
+   width: 130px !important;
+   height: 130px !important;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+   text-align: center;
+   margin: 2rem 0;
+   padding: 1rem;
+}
+
+.hero h2 {
+   font-size: 2rem;
+   margin-bottom: 0.5rem;
+}
+
+.hero p {
+   font-size: 1.1rem;
+   color: #444;
+}
+
+.hero-buttons {
+   margin-top: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+   display: inline-block;
+   padding: 0.6rem 1.2rem;
+   border-radius: 6px;
+   text-decoration: none;
+   font-weight: bold;
+   margin: 0.3rem;
+}
+
+.btn-primary {
+   background-color: #004080;
+   color: white;
+}
+
+.btn-secondary {
+   background-color: #ddd;
+   color: #333;
+}
+
+/* ===== OVERVIEW CARDS ===== */
+.overview-grid {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.2rem;
+   justify-content: center;
+   margin: 1.5rem 0;
+}
+
+.overview-card {
+   flex: 1 1 260px;
+   background: #f9f9f9;
+   padding: 1rem;
+   border: 1px solid #ccc;
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.overview-link {
+   font-weight: bold;
+   display: inline-block;
+   margin-top: 0.5rem;
+}
+
+/* ===== FEATURED BLOCKS ===== */
+.featured-block {
+   margin: 2rem 0;
+   padding: 1rem;
+   background-color: #eef3fa;
+   border-radius: 8px;
+}
+
+.featured-text h3 {
+   margin-bottom: 0.3rem;
+}
+
+/* ===== Dark Mode Toggle Button ===== */
+.dark-toggle {
+   background-color: #333;
+   color: #fff;
+   border: none;
+   padding: 0.3rem 0.8rem;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 0.9rem;
+}
+
+.dark-toggle:hover {
+   background-color: #555;
+}
+
+/* ===== Base dark mode styles ===== */
+body.dark-mode {
+   background-color: #121212;
+   color: #f0f0f0;
+}
+
+/* Container background */
+body.dark-mode .container {
+   background-color: #181818;
+}
+
+/* Navigation */
+body.dark-mode .sitenavigation {
+   background-color: #111;
+   border-bottom-color: #333;
+}
+
+body.dark-mode .sitenavigation a {
+   color: #f0f0f0;
+}
+
+body.dark-mode .sitenavigation a:hover {
+   color: #ffd700;
+}
+
+/* Cards & blocks (home + education) */
+body.dark-mode .overview-card,
+body.dark-mode .app-card,
+body.dark-mode .featured-block {
+   background-color: #1f1f1f;
+   border-color: #444;
+   box-shadow: none;
+}
+
+/* Tables */
+body.dark-mode table {
+   background-color: #1f1f1f;
+   border-color: #444;
+}
+
+body.dark-mode th,
+body.dark-mode td {
+   border-color: #444;
+}
+
+/* Footer */
+body.dark-mode footer {
+   background-color: #111;
+   color: #ccc;
+}
+
+body.dark-mode {
+    background: #1e1e1e !important;
+    color: #ffffff !important;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p,
+.dark-mode li,
+.dark-mode a {
+    color: #ffffff !important;
+}
+
+.dark-mode .container,
+.dark-mode article,
+.dark-mode section,
+.dark-mode .hero,
+.dark-mode .overview-card,
+.dark-mode .featured-block {
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+    border-color: #444 !important;
+}
+
+.dark-mode table {
+    background: #2b2b2b !important;
+    color: white !important;
+}
+
+.dark-mode td,
+.dark-mode th {
+    border-color: #555 !important;
+    color: white !important;
+}
+
+/* Map container fix */
+.dark-mode #masjid-map {
+    background: #2a2a2a !important;
+}
+
+/* Navigation bar */
+.dark-mode nav {
+    background: #111 !important;
+}
+
+.dark-mode nav a {
+    color: #eee !important;
+}
+
+/* Fix Leaflet popup visibility in dark mode */
+.dark-mode .leaflet-popup-content {
+    color: #000 !important;
+}
+
+.dark-mode .leaflet-popup-content a {
+    color: #0066cc !important;  /* visible blue link */
+    text-decoration: underline;
+}
+
+.dark-mode .leaflet-popup-tip,
+.dark-mode .leaflet-popup-content-wrapper {
+    background: #ffffff !important; /* white popup box */
+    color: #000 !important;
+}
+
+/* Fix Leaflet Zoom Buttons in Dark Mode */
+.dark-mode .leaflet-control-zoom,
+.dark-mode .leaflet-control-zoom-in,
+.dark-mode .leaflet-control-zoom-out {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #444 !important;
+}
+
+/* Fix header in dark mode */
+.dark-mode header {
+    background-color: #222 !important;
+}
+
+.dark-mode header h1 a {
+    color: #ffffff !important;
+}
