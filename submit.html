@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Submit a Mosque</title>
       <link rel="stylesheet" href="styles.css" />
    </head>
@@ -22,9 +22,7 @@
                <li><a href="education.html">Education</a></li>
                <li><a href="submit.html" class="current">Submit</a></li>
                <li><a href="about.html">About</a></li>
-               <li>
-                  <button id="darkToggle" class="dark-toggle" type="button">🌙 Dark Mode</button>
-               </li>
+               <li><button id="darkToggle" class="dark-toggle" type="button">🌙 Dark Mode</button></li>
             </ul>
          </nav>
 
@@ -33,39 +31,38 @@
                <h2>Submit a Mosque or Correction</h2>
                <p>Use this form to request an addition or correction to the mosque directory.</p>
 
-               <form
-                  action="https://formsubmit.co/rehan.syed001@umb.edu"
-                  method="POST"
-                  class="submit-form"
-               >
-                  <label for="name">Your Name:</label>
-                  <input id="name" type="text" name="name" required />
+               <form action="https://formsubmit.co/rehan.syed001@umb.edu" method="POST" class="submit-form" novalidate>
+                  <!-- FormSubmit settings -->
+                  <input type="hidden" name="_replyto" value="">
+                  <input type="hidden" name="_cc" value="{email}">
+                  <input type="hidden" name="_confirmation" value="Your mosque submission has been received. JazakAllahu khayran!">
+                  <input type="hidden" name="_captcha" value="false">
+                  <input type="hidden" name="_template" value="box">
 
-                  <label for="email">Your Email:</label>
-                  <input id="email" type="email" name="email" required />
+                  <label for="name">Your Name</label>
+                  <input id="name" name="name" type="text" required />
 
-                  <label for="mosque_name">Mosque Name:</label>
-                  <input id="mosque_name" type="text" name="mosque_name" required />
+                  <label for="email">Your Email</label>
+                  <input id="email" name="email" type="email" required />
 
-                  <label for="mosque_address">Mosque Address:</label>
-                  <input id="mosque_address" type="text" name="mosque_address" required />
+                  <label for="mosque-name">Mosque Name</label>
+                  <input id="mosque-name" name="mosque-name" type="text" required />
 
-                  <label for="mosque_region">Mosque Region:</label>
-                  <select id="mosque_region" name="mosque_region" required>
-                     <option value="">Select a Region</option>
+                  <label for="mosque-address">Mosque Address</label>
+                  <input id="mosque-address" name="mosque-address" type="text" required />
+
+                  <label for="region">Mosque Region</label>
+                  <select id="region" name="region" required>
+                     <option value="">Select a region</option>
                      <option value="Western">Western</option>
                      <option value="Central">Central</option>
                      <option value="Eastern">Eastern</option>
                   </select>
 
-                  <label for="details">Message / Details:</label>
-                  <textarea id="details" name="details" rows="6" required></textarea>
+                  <label for="message">Message / Details</label>
+                  <textarea id="message" name="message" rows="5" required></textarea>
 
-                  <!-- FormSubmit settings -->
-                  <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_template" value="box" />
-
-                  <button type="submit">Submit</button>
+                  <button type="submit" class="submit-btn">Submit</button>
                </form>
             </article>
          </main>
@@ -78,13 +75,11 @@
       <script>
          (function () {
             const toggle = document.getElementById('darkToggle');
-
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
                document.body.classList.add('dark-mode');
                if (toggle) toggle.textContent = '☀️ Light Mode';
             }
-
             if (toggle) {
                toggle.addEventListener('click', function () {
                   document.body.classList.toggle('dark-mode');

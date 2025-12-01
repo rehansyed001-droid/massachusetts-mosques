@@ -7,7 +7,7 @@
 
    <!-- Template assets -->
    <script src="modernizr-latest.js"></script>
-   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css" />
+   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
    <link rel="stylesheet" href="styles.css" />
 
    <link rel="shortcut icon" href="images/favicon.ico" />
@@ -36,73 +36,85 @@
          </ul>
       </nav>
 
-      <article id="contentstart">
-         <!-- ================= HERO SECTION ================= -->
-         <section class="hero">
-            <h2>Welcome to the Massachusetts Mosques Directory</h2>
-            <p>
-               Find local masajid, learn about Islamic resources, and explore the Muslim community across Massachusetts.
-            </p>
-
-            <div class="hero-buttons">
-               <a href="masajid.html" class="btn-primary">View Masajid Map</a>
-               <a href="education.html" class="btn-secondary">Education Resources</a>
-            </div>
-         </section>
-
-         <hr />
-
-         <!-- ================= OVERVIEW CARDS ================= -->
-         <section class="overview-grid">
-            <div class="overview-card">
-               <h3>🕌 About This Project</h3>
+      <main>
+         <article id="contentstart">
+            <!-- HERO SECTION -->
+            <section class="hero">
+               <h2>Welcome to the Massachusetts Mosques Directory</h2>
                <p>
-                  This website provides a directory of masajid across Massachusetts and helpful Islamic learning tools for all audiences—Muslims and non-Muslims alike.
+                  Find local masajid, learn about Islamic resources, and explore the Muslim community across Massachusetts.
                </p>
-            </div>
 
-            <div class="overview-card">
-               <h3>📍 Find Masajid</h3>
-               <p>
-                  Explore our interactive map and table of masajid across the state. Includes locations, regions, and links to websites.
-               </p>
-               <a href="masajid.html" class="overview-link">Explore Masajid →</a>
-            </div>
+               <div class="video-wrapper">
+                  <iframe
+                     src="https://www.youtube.com/embed/lWdzfZR7r3M"
+                     title="YouTube video player"
+                     frameborder="0"
+                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                     allowfullscreen>
+                  </iframe>
+               </div>
 
-            <div class="overview-card">
-               <h3>📘 Education Resources</h3>
-               <p>
-                  Learn using apps, Qur'an tools, hadith sources, and more. Perfect for students and beginners.
-               </p>
-               <a href="education.html" class="overview-link">View Resources →</a>
-            </div>
-         </section>
+               <div class="hero-buttons">
+                  <a href="masajid.html" class="btn-primary">View Masajid Map</a>
+                  <a href="education.html" class="btn-secondary">Education Resources</a>
+               </div>
+            </section>
 
-         <hr />
+            <hr />
 
-         <!-- ================= FEATURED SECTIONS ================= -->
-         <h2>Featured Sections</h2>
+            <!-- OVERVIEW CARDS -->
+            <section class="overview-grid">
+               <div class="overview-card">
+                  <h3>🕌 About This Project</h3>
+                  <p>
+                     This website provides a directory of masajid across Massachusetts and helpful Islamic learning tools for all audiences—Muslims and non-Muslims alike.
+                  </p>
+               </div>
 
-         <section class="featured-block">
-            <div class="featured-text">
-               <h3>Masajid Directory</h3>
-               <p>
-                  View an organized list of masajid across Massachusetts, complete with an interactive map and useful details.
-               </p>
-               <a href="masajid.html" class="btn-primary">Go to Masajid Page</a>
-            </div>
-         </section>
+               <div class="overview-card">
+                  <h3>📍 Find Masajid</h3>
+                  <p>
+                     Explore our interactive map and table of masajid across the state. Includes locations, regions, and links to websites.
+                  </p>
+                  <a href="masajid.html" class="overview-link">Explore Masajid →</a>
+               </div>
 
-         <section class="featured-block">
-            <div class="featured-text">
-               <h3>Islamic Education</h3>
-               <p>
-                  Access recommended apps, books, Qur'an platforms, hadith sources, and Seerah lectures—all in one page.
-               </p>
-               <a href="education.html" class="btn-secondary">Go to Education Page</a>
-            </div>
-         </section>
-      </article>
+               <div class="overview-card">
+                  <h3>📘 Education Resources</h3>
+                  <p>
+                     Learn using apps, Qur'an tools, hadith sources, and more. Perfect for students and beginners.
+                  </p>
+                  <a href="education.html" class="overview-link">View Resources →</a>
+               </div>
+            </section>
+
+            <hr />
+
+            <!-- FEATURED SECTIONS -->
+            <h2>Featured Sections</h2>
+
+            <section class="featured-block">
+               <div class="featured-text">
+                  <h3>Masajid Directory</h3>
+                  <p>
+                     View an organized list of masajid across Massachusetts, complete with an interactive map and useful details.
+                  </p>
+                  <a href="masajid.html" class="btn-primary">Go to Masajid Page</a>
+               </div>
+            </section>
+
+            <section class="featured-block">
+               <div class="featured-text">
+                  <h3>Islamic Education</h3>
+                  <p>
+                     Access recommended apps, books, Qur'an platforms, hadith sources, and Seerah lectures—all in one page.
+                  </p>
+                  <a href="education.html" class="btn-secondary">Go to Education Page</a>
+               </div>
+            </section>
+         </article>
+      </main>
 
       <footer>
          <p>&copy; 2025 Massachusetts Mosques Directory</p>
@@ -131,6 +143,5 @@
          });
       })();
    </script>
-
 </body>
 </html>
